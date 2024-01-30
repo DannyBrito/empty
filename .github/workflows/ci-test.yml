@@ -1,8 +1,6 @@
 name: Bash script on pull request
 
-on:
-  pull_request:
-    types: [opened, synchronize]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -10,6 +8,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Run bash script
+      - name: Print env vars
         run: |
           env | sort
