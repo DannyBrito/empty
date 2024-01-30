@@ -1,0 +1,13 @@
+name: Bash script on pull request
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Print env vars
+        run: |
+          env | sort
